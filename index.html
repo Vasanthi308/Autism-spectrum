@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Autism Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Autism Prediction Using Machine Learning</h2>
+        <form method="POST">
+            Age: <input type="number" name="age" required><br>
+            Gender: <input type="text" name="gender" required><br>
+            Ethnicity: <input type="text" name="ethnicity" required><br>
+            Jaundice: <input type="text" name="jaundice" required><br>
+            Autism in Family: <input type="text" name="autism_family" required><br>
+            Country of Residence: <input type="text" name="country" required><br>
+            Used App Before: <input type="text" name="app_used" required><br>
+            Screening Score: <input type="number" name="score" required><br>
+            Age Description: <input type="text" name="age_desc" required><br>
+            Relation: <input type="text" name="relation" required>
+
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction_text %}
+            <h3>{{ prediction_text }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
